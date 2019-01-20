@@ -1,0 +1,8 @@
+[package]
+name = "cancer"
+version = "0.1.0"
+authors = ["Solarys <strafe.solarys@gmail.com>"]
+
+[dependencies]
+colored = "1.6.1"
+clipboard = "0.5.0"
