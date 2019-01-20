@@ -61,7 +61,7 @@ fn emoji_clap(input: String) -> String {
 
     for i in 0..input.len() {
         if input[i].is_alphabetic() {
-            output.push_str(format!(":regional_indicator_{}: ", input[i]).as_str());
+            output.push_str(format!(":regional_indicator_{}: ", input[i].to_lowercase()).as_str());
         }
             else if input[i] == ' ' {
                 output.push_str(" :clap: ");
