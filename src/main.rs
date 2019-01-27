@@ -7,11 +7,15 @@ use colored::*;
 fn main() {
     let mut args: Vec<String> = env::args().collect();
     let mut output = String::new();
+
+    if args.len() < 2 {
+        print_help();
+        return;
+    }
+
     match args[1].as_str() {
         "-h" => {
-            println!("{} -> bold itaics, with spaces between the characters", "spaced".green().bold());
-            println!("{} -> put a :clap: between each word", "clap".yellow().bold());
-            println!("{} -> clap but every alphabet character is emojified", "emojiclap".cyan().bold());
+            print_help();
         }
         "spaced" => {
             args.drain(0..2);
@@ -73,4 +77,10 @@ fn emoji_clap(input: String) -> String {
 
     }
     return output;
+}
+
+fn print_help() {
+    println!("{} -> bold itaics, with spaces between the characters", "spaced".green().bold());
+    println!("{} -> put a :clap: between each word", "clap".yellow().bold());
+    println!("{} -> clap but every alphabet character is emojified", "emojiclap".cyan().bold());
 }
